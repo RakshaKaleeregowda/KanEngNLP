@@ -1,0 +1,2 @@
+experiment,model,learning_rate,mixed_class_weight_multiplier,accuracy,macro_f1,validation_samples
+Experiment 4 - Increased Mixed Class Weight,XLM-RoBERTa,2e-05,1.2,0.6805807622504537,0.5966518103598318,551

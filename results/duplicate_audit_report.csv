@@ -1,0 +1,32 @@
+﻿first_split,second_split,text,first_labels,second_labels,labels_agree
+train,dev,En music guru,mixed,mixed,True
+train,dev,Intha olle video nu dislike madiroru yentha kachada nanmaklirbeku🤦🤦🤦🤦,negative,negative,True
+train,dev,Jai D Boss,positive,positive,True
+train,dev,Super guru,positive,positive,True
+train,dev,Super song,positive,positive,True
+train,dev,Super togari tippa,positive,positive,True
+train,dev,Superb song,positive,positive,True
+train,dev,ಇದು ಚರಿತ್ರೆ ಸೃಷ್ಟಿಸೊ ಅವತಾರ,positive,positive,True
+train,dev,ಇದು ಚರಿತ್ರೆ ಸೃಷ್ಟಿಸೋ ಅವತಾರ,positive,positive,True
+train,dev,ಚಂದನ್ ಶೆಟ್ಟಿ ಟ್ರೊಲ್ ವಿಡಿಯೋ ನೀವು ನೋಡಿ ನೆಗಡ್ಡೆ ಇದ್ರೆ ನಾವ್ ಗ್ಯಾರಂಟಿ,positive,positive,True
+train,dev,ಜೈ ಕನ್ನಡ,positive,mixed,False
+train,dev,ಸುಪರ್ ಅವನೆ ಶ್ರೀಮನ ನಾರಾಯಣ,positive,positive,True
+train,test,China avru nan shata,negative,negative,True
+train,test,Jai D Boss,positive,positive,True
+train,test,Le nimmouna thullagaa naayi tunni saabarige huttida MidArimagane,negative,negative,True
+train,test,Slow poison song annoru like Maadi,positive,mixed,False
+train,test,Spr song,positive,positive,True
+train,test,Super anna,positive,positive,True
+train,test,Super creative kannadiga,positive,positive,True
+train,test,Super movie guru,positive,positive,True
+train,test,Super song,positive,positive,True
+train,test,Super song guru,positive,positive,True
+train,test,javari tippa superb ri,positive,positive,True
+train,test,super super boss,positive,positive,True
+train,test,super ತೊಗರಿ ತಿಪ್ಪ,positive,positive,True
+train,test,ಚಂದನ್ ಶೆಟ್ಟಿ ಟ್ರೊಲ್ ವಿಡಿಯೋ ನೀವು ನೋಡಿ ನೆಗಡ್ಡೆ ಇದ್ರೆ ನಾವ್ ಗ್ಯಾರಂಟಿ,positive,positive,True
+dev,test,Guru ninge naanu Dodda fan,positive,positive,True
+dev,test,Jai D Boss,positive,positive,True
+dev,test,Nam kannada songs yavglu super hit,positive,positive,True
+dev,test,Super song,positive,positive,True
+dev,test,ಚಂದನ್ ಶೆಟ್ಟಿ ಟ್ರೊಲ್ ವಿಡಿಯೋ ನೀವು ನೋಡಿ ನೆಗಡ್ಡೆ ಇದ್ರೆ ನಾವ್ ಗ್ಯಾರಂಟಿ,positive,positive,True

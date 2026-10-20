@@ -1,0 +1,2 @@
+﻿model,accuracy,macro_f1,training_rows,validation_rows
+Combined Word + Character TF-IDF,0.7241379310344828,0.6312072601032165,4358,551

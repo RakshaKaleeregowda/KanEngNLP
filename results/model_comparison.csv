@@ -1,0 +1,8 @@
+Experiment,Accuracy,Macro-F1,Mixed F1
+Word TF-IDF + Logistic Regression,0.735,0.563,
+Character TF-IDF + Weighted Logistic Regression,0.7096,0.6229,
+Combined Word + Character TF-IDF,0.7241,0.6312,0.39
+XLM-R Experiment 1 - Unweighted,0.6824,0.4593,0.0
+"XLM-R Experiment 2 - Weighted, LR 1e-5",0.68,0.58,0.3
+"XLM-R Experiment 3 - Weighted, LR 2e-5",0.7005,0.597,0.33
+XLM-R Experiment 4 - Mixed Weight +20%,0.6806,0.5967,0.366

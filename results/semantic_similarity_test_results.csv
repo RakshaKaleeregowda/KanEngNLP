@@ -1,0 +1,5 @@
+sentence1,sentence2,similarity
+"Naanu ee movie tumba ishta patte.","I really liked this movie.",0.3515
+"Naanu ee movie tumba ishta patte.","ನನಗೆ ಈ ಸಿನಿಮಾ ತುಂಬಾ ಇಷ್ಟವಾಯಿತು.",0.3002
+"Naanu ee movie tumba ishta patte.","I hate this movie.",0.2737
+"Naanu ee movie tumba ishta patte.","The weather is very hot today.",-0.0217

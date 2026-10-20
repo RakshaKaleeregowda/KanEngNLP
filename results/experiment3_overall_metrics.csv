@@ -1,0 +1,2 @@
+experiment,checkpoint,accuracy,macro_f1,validation_samples
+Experiment 3 - Weighted XLM-RoBERTa,checkpoint-1092,0.7005444646098004,0.5969506214226294,551

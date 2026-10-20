@@ -1,0 +1,2 @@
+﻿model,accuracy,macro_f1,training_rows,validation_rows
+Character TF-IDF + Logistic Regression,0.7096188747731398,0.6228538550132905,4358,551

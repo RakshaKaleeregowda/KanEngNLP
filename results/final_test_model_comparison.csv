@@ -1,0 +1,3 @@
+model,test_accuracy,test_macro_f1,negative_f1,positive_f1,mixed_f1
+Combined Word + Character TF-IDF,0.6913357400722022,0.5942739765235024,0.6541,0.7834,0.3453
+Weighted XLM-RoBERTa Experiment 3,0.7093862815884476,0.592543332298254,0.6603,0.812,0.3053

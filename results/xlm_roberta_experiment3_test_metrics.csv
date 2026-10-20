@@ -1,0 +1,2 @@
+model,test_samples,accuracy,macro_f1
+XLM-RoBERTa Experiment 3,554,0.7093862815884476,0.592543332298254
