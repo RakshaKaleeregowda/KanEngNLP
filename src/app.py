@@ -11,7 +11,7 @@ st.set_page_config(page_title='CodeMix AI', page_icon='🪷', layout='wide')
 st.markdown('''<style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 html,body,[class*="css"]{font-family:'DM Sans',sans-serif}.stApp{background:linear-gradient(135deg,#f7f7ff,#f3fbff 55%,#fff8f3)}
-.block-container{max-width:1280px;padding-top:1.4rem}.hero{padding:1.7rem 1.8rem;border-radius:24px;color:white;background:linear-gradient(120deg,#4338ca,#7c3aed 55%,#db2777);box-shadow:0 14px 38px #5145cd22;margin-bottom:1rem}
+.block-container{max-width:1300px;padding-top:4rem}.hero{padding:1.7rem 1.8rem;border-radius:24px;color:white;background:linear-gradient(120deg,#4338ca,#7c3aed 55%,#db2777);box-shadow:0 14px 38px #5145cd22;margin-bottom:1rem}
 .hero h1{color:white!important;font-family:Manrope,sans-serif;font-size:2.4rem;margin:.25rem 0}.hero p{color:#f3efff;margin:0}.panel{background:#fff;border:1px solid #e8e8f4;border-radius:17px;padding:1rem 1.1rem;margin:.3rem 0 .8rem;box-shadow:0 5px 18px #30305a08}
 div[data-testid="stMetric"]{background:#fff;border:1px solid #e8e8f4;padding:.8rem;border-radius:15px}div.stButton>button{border-radius:12px;font-weight:700;border:1px solid #dedcf6}.stTabs [data-baseweb="tab"]{border-radius:10px 10px 0 0}
 </style><div class="hero"><div style="letter-spacing:.15em;font-size:.75rem;font-weight:800">🪷 MULTILINGUAL NLP PLAYGROUND</div><h1>CodeMix AI</h1><p>Understand the feeling, context, language mix and tone behind Kannada–English text.</p></div>''', unsafe_allow_html=True)
