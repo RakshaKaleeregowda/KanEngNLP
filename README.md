@@ -1,176 +1,112 @@
-# Kannada-English Code-Mixed Text Analysis
+# CodeMix AI — Kannada-English Code-Mixed Text Analysis
 
-**Sentiment Analysis, Semantic Similarity, and Language Utilities for Kannada-English Code-Mixed Text**
+**A Streamlit NLP demo for sentiment analysis and supporting language utilities for Kannada-English text.**
 
-A Python-based NLP project that explores sentiment analysis of Kannada-English code-mixed text, including text written in Romanized Kannada and Kannada script. The project combines machine-learning models with lightweight text-analysis utilities and a Streamlit interface.
+[**Launch the live app**](https://kanengnlp-4if9rjnq3c33wa8ybhqrc.streamlit.app) · [View source code](https://github.com/rakshajeevan8431-source/KanEngNLP)
 
 ## Overview
-
-People frequently mix Kannada and English in everyday digital communication. This creates challenges for traditional sentiment-analysis systems because of spelling variations, mixed scripts, informal expressions, and context-dependent meanings.
-
-This project investigates machine-learning approaches for classifying sentiment in Kannada-English code-mixed text and provides an interactive interface for exploring model predictions and related text-analysis features.
+CodeMix AI explores sentiment classification for text that mixes Kannada and English, including Romanized Kannada and Kannada script. The application combines a saved TF-IDF/Logistic Regression classifier with supplementary rule-based text cues and optional language utilities. It is an educational prototype; not every feature has been independently evaluated.
 
 ## Features
+- **Sentiment classification:** Saved combined word- and character-level TF-IDF model, plus phrase-cue overrides for selected expressions.
+- **Emotion fingerprint:** Keyword-based estimate, not a trained emotion classifier.
+- **Topic helper:** Predefined keyword groups for entertainment, food, technology, education, weather, and sports.
+- **Context and explanation cues:** Rule-based phrase matches, not model-generated token attributions.
+- **Script profile:** Detects Kannada and Latin scripts and selected possible Romanized-Kannada cues; no language percentages.
+- **Semantic similarity:** Multilingual MiniLM sentence embeddings and cosine similarity.
+- **Voice input:** SpeechRecognition with Google's online speech recognition configured for Kannada (`kn-IN`).
+- **Translation:** GoogleTranslator followed by MyMemory fallback; service availability and quality can vary.
+- **Transliteration:** Aksharamukha for Kannada and standardized Roman (IAST) conversion. Arbitrary colloquial Kanglish is not guaranteed to transliterate correctly.
 
-- **Sentiment analysis:** Predicts sentiment using a saved TF-IDF and Logistic Regression model.
-- **Word and character features:** Supports a combined word-level and character-level TF-IDF model, designed to capture lexical information and spelling variations.
-- **Emotion cues:** Uses keyword-based indicators to provide an additional view of the text.
-- **Topic detection:** Identifies possible topics using keyword-based rules.
-- **Prediction explanations:** Highlights relevant lexical cues that may help explain a prediction.
-- **Script-related analysis:** Examines selected language and script cues in the input.
-- **Translation and transliteration utilities:** Provides language conversion features, subject to the capabilities and availability of the underlying libraries and services.
-- **Semantic similarity:** Includes a component for comparing the semantic similarity of text.
-- **Voice input:** Supports speech input through a speech-recognition service.
-- **Interactive interface:** Provides a Streamlit application for experimenting with text inputs.
+## Live demo
+[Open CodeMix AI on Streamlit Community Cloud](https://kanengnlp-4if9rjnq3c33wa8ybhqrc.streamlit.app)
 
-*Note:* These features do not all use the same methodology. Sentiment classification uses a trained machine-learning model, while several supplementary analysis features use keyword-based heuristics. Their outputs should not be interpreted as equally validated predictions.
+The first load may take time because the semantic component loads a pretrained multilingual sentence-embedding model. Internet access is needed for model downloads and online voice/translation features.
 
-## Technology Stack
+## Technology
+Python, Streamlit, pandas, NumPy, scikit-learn, joblib, TF-IDF, Logistic Regression, Sentence Transformers, SpeechRecognition, deep-translator, Aksharamukha.
 
-- Python
-- Streamlit
-- pandas and NumPy
-- scikit-learn
-- TF-IDF feature extraction
-- Logistic Regression
-- joblib
-- Sentence Transformers for semantic similarity
-- Translation, transliteration, and speech-recognition libraries
-
-## Project Structure
-
+## Repository structure
 ```text
-KannadaEnglishNLP/
-├── data/
-│   ├── raw/                 # Source dataset splits
-│   └── processed/           # Cleaned and deduplicated datasets
-├── models/
-│   ├── sentiment_tfidf_logreg.joblib
-│   ├── char_tfidf_logreg.joblib
-│   └── combined_word_char_tfidf.joblib
-├── notebooks/               # Exploratory analysis and experiments
-├── results/                 # Evaluation metrics, predictions and reports
-├── src/
-│   ├── app.py               # Streamlit application
-│   ├── text_analyzer.py     # Sentiment-analysis logic
-│   ├── semantic_analysis.py # Semantic similarity
-│   ├── contextual_meaning.py
-│   ├── topic_detector.py
-│   ├── translation.py
-│   ├── train_baseline.py
-│   ├── train_char_baseline.py
-│   └── train_word_char_combined.py
+KanEngNLP/
+├── data/raw/                  # Original source splits
+├── data/processed/            # Cleaned and deduplicated splits
+├── models/                    # Saved scikit-learn pipelines
+├── notebooks/                 # Exploratory notebooks
+├── results/                   # Metrics, predictions and error analysis
+├── src/app.py                 # Streamlit UI
+├── src/text_analyzer.py       # Model loading and sentiment logic
+├── src/semantic_analysis.py   # Embeddings and cosine similarity
+├── src/contextual_meaning.py  # Rule-based explanation
+├── src/topic_detector.py      # Keyword topic helper
+├── src/prepare_dataset.py     # Label mapping and cleaning
+├── src/create_clean_splits.py # Cross-split deduplication
+├── src/train_baseline.py      # Word TF-IDF baseline
+├── src/train_char_baseline.py # Character TF-IDF baseline
+├── src/train_word_char_combined.py
 ├── requirements.txt
-├── .gitignore
+├── LICENSE
 └── README.md
 ```
+Additional analysis and validation scripts are also under `src/`.
 
-Additional scripts and experiment outputs are available in the corresponding directories.
+## Run locally
+Prerequisites: Python 3.10–3.12 recommended, pip, and internet access for pretrained model downloads and online services.
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10–3.12 recommended
-- pip
-- An internet connection for features that rely on online services or download pretrained models
-
-### 1. Download the repository
-
-Download the repository as a ZIP file from GitHub and extract it, or clone it using Git:
-
+1. Download and extract the repository ZIP, or clone:
 ```bash
 git clone https://github.com/rakshajeevan8431-source/KanEngNLP.git
 cd KanEngNLP
 ```
-
-### 2. Create a virtual environment
+2. Create a virtual environment.
 
 **Windows PowerShell**
-
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-**macOS or Linux**
-
+**macOS/Linux**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-
-### 3. Install dependencies
-
+3. Install dependencies:
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-Some optional features may require additional system configuration or access to external services.
-
-### 4. Run the application
-
-From the project root directory:
-
+4. Run from the repository root:
 ```bash
 streamlit run src/app.py
 ```
+The saved sentiment model must be present at `models/combined_word_char_tfidf.joblib`.
 
-Streamlit will display a local URL in the terminal. Open that URL in your browser to use the application.
+## Recorded evaluation results
+These values are transcribed from repository result CSVs; they were not independently recomputed for this README.
 
-### 5. Troubleshooting
+| Experiment | Split | Samples | Accuracy | Macro-F1 |
+|---|---|---:|---:|---:|
+| Combined word + character TF-IDF + Logistic Regression | Validation | 551 | 0.7241 | 0.6312 |
+| Combined word + character TF-IDF + Logistic Regression | Held-out test | 554 | 0.6913 | 0.5943 |
+| Weighted XLM-RoBERTa Experiment 3 | Held-out test | 554 | 0.7094 | 0.5925 |
 
-- **Missing Python module:** Confirm that the virtual environment is activated and install the dependencies from `requirements.txt`.
-- **Model file not found:** Run the command from the project root and ensure that the `models/` directory was included in the download.
-- **Translation or speech recognition fails:** Check the internet connection and the availability or usage limits of the external service.
-- **Semantic similarity takes time to start:** The component may need to download a pretrained model on its first use.
-- **Installation errors:** Confirm the Python version and consult the relevant library documentation.
-
-## Model Evaluation
-
-The project includes baseline experiments using word-level TF-IDF, character-level TF-IDF, and combined word-and-character features.
-
-The following results were recorded for the combined TF-IDF and Logistic Regression model:
-
-| Evaluation | Accuracy | Macro F1-score |
-|---|---:|---:|
-| Validation | 72.41% | 0.6312 |
-| Held-out test | 69.13% | 0.5943 |
-
-These figures describe the recorded experiment and are not a guarantee of performance on new data.
-
-The repository's `results/` directory contains additional experiment metrics, classification reports, predictions, and error-analysis outputs. Refer to those files when comparing individual experiments.
+The recorded test comparison gives mixed-class F1 of 0.3453 for the combined TF-IDF model and 0.3053 for the weighted XLM-RoBERTa experiment. XLM-RoBERTa has higher accuracy, while combined TF-IDF has marginally higher macro-F1. Do not infer a categorical winner from these metrics alone.
 
 ## Limitations
+- Performance may vary with spelling, script, code-mixing, negation, sarcasm, and domain.
+- `TextAnalyzer` applies phrase overrides before falling back to the saved classifier.
+- Emotion, topic, script-cue, civility, and contextual-explanation features are heuristic aids, not independently validated classifiers.
+- Semantic similarity is not a sentiment score or probability.
+- Translation and voice recognition rely on external services.
+- The embedding model is initialized during analyzer startup and may require a download even if similarity is not used.
+- Package versions are not pinned; exact environment reproduction is not guaranteed.
 
-- Code-mixed text can contain informal spellings, transliteration differences, sarcasm, and ambiguous expressions.
-- Model performance may vary across Kannada script, Romanized Kannada, English, and mixed-script inputs.
-- Keyword-based emotion, topic, and explanation features are heuristic aids and are not independently validated classifiers.
-- Translation and speech recognition may be inaccurate for colloquial or code-mixed language.
-- Semantic similarity depends on its underlying pretrained model and is different from sentiment classification.
-- Reported evaluation metrics depend on the dataset, preprocessing, data splits, and evaluation procedure.
+## Dataset and licensing
+The preprocessing script maps `positive`, `negative`, and `mixed_feelings` to `positive`, `negative`, and `mixed`; it excludes `not-kannada` and `unknown_state`. Before redistributing raw or processed data, verify the original dataset source, licence, attribution requirements, and redistribution permissions. The code licence does not automatically cover third-party datasets or pretrained models.
 
-## Reproducibility
-
-The saved model files allow supported predictions without retraining the classifiers. The repository also includes datasets and experiment outputs to support further inspection.
-
-Reproducing every experiment may require additional dependencies, pretrained model downloads, and running the relevant scripts in the correct order. The saved evaluation outputs should not be treated as proof that every experiment can be reproduced from a fresh installation without further configuration.
-
-## Responsible Use and Dataset Licensing
-
-This project is intended for educational and research purposes. Predictions should not be treated as definitive assessments of a person's feelings, intent, or behaviour.
-
-Before redistributing the repository's dataset files, verify the original dataset's licence, attribution requirements, and redistribution permissions. Follow the applicable terms for all datasets and pretrained models used.
-
-## Future Improvements
-
-- Improve sentiment classification for Romanized Kannada and Kannada-script inputs.
-- Evaluate performance across separate language and script subsets.
-- Strengthen contextual handling of negation, sarcasm, and spelling variations.
-- Validate supplementary emotion and topic-analysis features against annotated data.
-- Improve reproducibility through documented experiment configurations and automated tests.
+## Responsible use
+For educational and research use. Do not use heuristic outputs for high-stakes decisions or treat them as definitive judgments of a person's intent or feelings.
 
 ## License
-
-The repository includes a `LICENSE` file. Refer to it for the project's licensing terms. Dataset and pretrained-model licences may be different from the repository licence.
+See [LICENSE](LICENSE) for the repository code licence. Dataset and pretrained-model terms may differ.
