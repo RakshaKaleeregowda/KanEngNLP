@@ -5,7 +5,7 @@ try:
     import speech_recognition as sr
 except ImportError:
     sr = None
-from src.text_analyzer import TextAnalyzer
+from text_analyzer import TextAnalyzer
 
 st.set_page_config(page_title='CodeMix AI', page_icon='🪷', layout='wide')
 st.markdown('''<style>
