@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+scikit-learn
+joblib
+deep-translator
+SpeechRecognition
+aksharamukha
+sentence-transformers
